@@ -42,7 +42,24 @@ extensions = [
     "sphinx.ext.intersphinx",
     "sphinx.ext.viewcode",
     "sphinx.ext.autosectionlabel",
+    'hoverxref.extension',
+    'sphinx_search.extension'
 ]
+
+hoverxref_auto_ref = True
+hoverxref_domains = ['py']
+hoverxref_roles = [
+    'option',
+]
+hoverxref_role_types = {
+    'hoverxref': 'modal',
+    'mod': 'modal',  # for Python Sphinx Domain
+    'doc': 'modal',  # for whole docs
+    'class': 'tooltip',  # for Python Sphinx Domain
+    'ref': 'tooltip',  # for hoverxref_auto_ref config
+    'confval': 'tooltip',  # for custom object
+}
+
 
 # AutosectionLabel settings.
 # Uses a <page>:<label> schema which doesn't work for duplicate sub-section
